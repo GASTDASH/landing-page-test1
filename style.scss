@@ -1,0 +1,790 @@
+$bg-color: #f8f9ff;
+$primary: #009379;
+$primary-dark: #00745e;
+$grey1: #2d2d2d;
+
+%display_xl {
+    margin: 0;
+    font-size: 67px;
+    font-weight: bold;
+    letter-spacing: -2.5pt;
+    line-height: 130%;
+    color: $grey1;
+}
+
+%display_l {
+    margin: 0;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 130%;
+    color: $grey1;
+}
+
+%display_m {
+    margin: 0;
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 130%;
+}
+
+%display_xs {
+    margin: 0;
+    font-size: 21px;
+    line-height: 130%;
+    font-weight: 600;
+}
+
+%body_l {
+    margin: 0;
+    font-size: 21px;
+    line-height: 150%;
+}
+
+%body_m {
+    margin: 0;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+%body_s {
+    margin: 0;
+    font-size: 14px;
+    line-height: 160%;
+}
+
+%section_basic_spacing {
+    margin: 120px 55px;
+}
+
+%basic_shadow {
+    box-shadow: 34px 29px 40px #3366ff10;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $bg-color;
+    font-family: "Poppins", serif;
+    // overflow-x: hidden;
+}
+
+.button {
+    height: 60px;
+    width: fit-content;
+    padding: 0 50px;
+
+    border-radius: 20px;
+    border: none;
+    background-color: transparent;
+    font-family: "Poppins", sans-serif;
+    color: $primary;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &--filled-light {
+        background-color: #e5f4f2;
+
+        &:hover {
+            background-color: #d4ebe8;
+        }
+    }
+    &--filled-white {
+        background-color: white;
+
+        &:hover {
+            background-color: #d4ebe8;
+        }
+    }
+    &--filled-dark {
+        background-color: $primary;
+        color: white;
+
+        &:hover {
+            background-color: $primary-dark;
+        }
+    }
+    &--outlined {
+        background-color: white;
+        border: 1px solid $primary;
+
+        &:hover {
+            background-color: #dddddf;
+        }
+    }
+}
+
+.link-button {
+    margin: 0;
+    font-family: "Poppins", serif;
+    color: $primary;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+
+    &__text {
+        margin: 0;
+    }
+
+    &:hover {
+        color: $primary-dark;
+    }
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 32px;
+        width: 32px;
+        border-radius: 100%;
+
+        &--light {
+            background-color: #e5f4f2;
+        }
+        &--dark {
+            background-color: #4e4d4d;
+        }
+    }
+}
+
+.textfield {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #d8d8d8;
+
+    &__container {
+        height: 100%;
+        margin: 0 20px;
+
+        display: flex;
+        align-items: center;
+    }
+    &__icon {
+        padding: 8px;
+        border-right: 1px solid #dbe3ff;
+    }
+    &__input {
+        @extend %body_m;
+        margin-left: 12px;
+        width: 100%;
+        border-style: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.header {
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 50px;
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+    }
+    &__main-buttons {
+        display: flex;
+        gap: 20px;
+    }
+    &__link-button {
+        margin-right: 50px;
+    }
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+}
+
+.intro {
+    // TODO: Можно потом убрать в наследуемый класс
+    &__container {
+        @extend %section_basic_spacing;
+        max-width: 1170px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title {
+        @extend %display_xl;
+    }
+    &__subtitle {
+        @extend %body_l;
+        margin-top: 20px;
+    }
+    &__image {
+        width: 450px;
+        height: 450px;
+    }
+    &__buttons-row {
+        margin-top: 40px;
+
+        display: flex;
+        gap: 18px;
+    }
+}
+
+.sponsors {
+    &__container {
+        margin: 60px 55px;
+        padding: 60px;
+
+        border-top: 1px solid #d8d8d8;
+        border-bottom: 1px solid #d8d8d8;
+    }
+    &__list {
+        width: 80vw;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.features {
+    // TODO: Можно потом убрать в наследуемый класс
+    &__container {
+        @extend %section_basic_spacing;
+    }
+    &__text {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    &__title {
+        @extend %display_m;
+    }
+    &__list {
+        display: flex;
+        gap: 30px;
+    }
+
+    .feature-card {
+        min-height: 400px;
+        width: 370px;
+
+        background-color: white;
+        border-radius: 20px;
+        @extend %basic_shadow;
+
+        &__container {
+            padding: 40px 30px;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        &__info {
+            height: fit-content;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__icon-container {
+            height: 82px;
+            width: 82px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 20px;
+
+            &--red {
+                background-color: #ffe0dc;
+            }
+            &--green {
+                background-color: #cce9e4;
+            }
+            &--yellow {
+                background-color: #fef7e5;
+            }
+        }
+    }
+}
+
+.metrics {
+    // TODO: Можно потом убрать в наследуемый класс
+    &__container {
+        @extend %section_basic_spacing;
+    }
+    &__text {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    &__title {
+        @extend %display_m;
+    }
+    &__list {
+        display: flex;
+        gap: 30px;
+    }
+
+    .metric-card {
+        width: 270px;
+
+        background-color: white;
+        border-bottom: 4px solid #f2bfaf;
+        border-radius: 20px 20px 0 0;
+        @extend %basic_shadow;
+
+        &__container {
+            height: 100%;
+            padding: 48px 0;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__title {
+            @extend %display_m;
+            margin-bottom: 5px;
+            color: $grey1;
+        }
+        &__subtitle {
+            margin: 0;
+        }
+    }
+}
+
+.cta {
+    // TODO: Можно потом убрать в наследуемый класс
+    &__container {
+        @extend %section_basic_spacing;
+        max-width: 1170px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title {
+        @extend %display_xl;
+        letter-spacing: -0.5pt;
+    }
+    &__subtitle {
+        @extend %body_l;
+        margin-top: 20px;
+    }
+    &__buttons-row {
+        margin-top: 40px;
+
+        display: flex;
+        gap: 18px;
+    }
+}
+
+.reviews {
+    // TODO: Можно потом убрать в наследуемый класс
+    &__container {
+        @extend %section_basic_spacing;
+    }
+    &__text {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    &__title {
+        @extend %display_m;
+    }
+    &__list {
+        display: flex;
+        gap: 30px;
+    }
+
+    .review-card {
+        min-height: 480px;
+        width: 350px;
+
+        background-color: white;
+        border-radius: 20px;
+        border: 1px solid #e5f4f2;
+        @extend %basic_shadow;
+
+        &__container {
+            height: 100%;
+            padding: 40px 30px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        &__info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__client-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__person-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__photo {
+            width: 56px;
+            margin-bottom: 16px;
+
+            border-radius: 100%;
+        }
+        &__person-name {
+            @extend %display_xs;
+        }
+        &__person-description {
+            @extend %body_s;
+            margin: 6px 0 30px 0;
+        }
+        &__text {
+            @extend %body_m;
+            text-align: center;
+        }
+    }
+}
+
+.plans {
+    // TODO: Можно потом убрать в наследуемый класс
+    &__container {
+        @extend %section_basic_spacing;
+    }
+    &__text {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    &__title {
+        @extend %display_m;
+    }
+    &__list {
+        display: flex;
+        gap: 30px;
+    }
+
+    .plan-card {
+        width: 370px;
+        height: fit-content;
+
+        border-radius: 20px;
+        @extend %basic_shadow;
+
+        &__container {
+            padding: 40px 30px;
+        }
+        &__name {
+            @extend %body_l;
+            color: $grey1;
+        }
+        &__price {
+            margin-bottom: 6px;
+
+            display: flex;
+            gap: 12px;
+            align-items: end;
+        }
+        &__price-dollars {
+            @extend %display_l;
+            margin-top: 6px;
+        }
+        &__per-month {
+            margin-bottom: 8px;
+            font-size: 16px;
+            line-height: 160%;
+            font-weight: 600;
+            color: #3b3b3b;
+        }
+        &__description {
+            margin: 0;
+            font-size: 16px;
+            line-height: 160%;
+        }
+        &__info {
+            margin-bottom: 24px;
+        }
+        &__features {
+            margin-bottom: 30px;
+        }
+        &__features-list {
+            padding-left: 0;
+        }
+        &__features-item {
+            list-style: none;
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 130%;
+            font-weight: 600;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                margin-right: 10px;
+
+                background-image: url(assets/icons/Check.svg);
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .__button {
+            width: 100%;
+        }
+        &--white {
+            background-color: white;
+        }
+        &--primary {
+            background-color: $primary;
+            color: white;
+
+            .plan-card__name {
+                color: white;
+            }
+            .plan-card__price-dollars {
+                color: white;
+            }
+            .plan-card__per-month {
+                color: white;
+            }
+            .plan-card__features-item::before {
+                background-image: url(assets/icons/CheckWhite.svg);
+            }
+        }
+    }
+}
+
+.team {
+    // TODO: Можно потом убрать в наследуемый класс
+    &__container {
+        @extend %section_basic_spacing;
+    }
+    &__text {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    &__title {
+        @extend %display_m;
+    }
+    &__workers-list {
+        display: flex;
+        gap: 30px;
+    }
+
+    .worker {
+        width: 370px;
+
+        background-color: white;
+        border-radius: 20px;
+        @extend %basic_shadow;
+
+        &__photo {
+            width: 100%;
+            height: 278px;
+            object-fit: cover;
+
+            border-radius: 20px 20px 0 0;
+        }
+        &__info {
+            margin-top: 20px;
+            text-align: center;
+
+            border-bottom: 1px solid #d8d8d8;
+        }
+        &__name {
+            @extend %display_xs;
+            margin-bottom: 6px;
+        }
+        &__job {
+            margin: 0;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 160%;
+            color: $grey1;
+        }
+        &__links {
+            margin: 20px 0 30px 0;
+        }
+    }
+}
+
+.get-today {
+    width: 100%;
+
+    &__container {
+        margin: 60px 55px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .get-today-card {
+        max-width: 1170px;
+
+        display: flex;
+
+        background-color: #f2bfaf;
+        border-radius: 20px;
+
+        &__content {
+            width: 50%;
+            padding: 60px;
+        }
+        &__text {
+            padding-bottom: 40px;
+        }
+        &__title {
+            @extend %display_l;
+            margin-bottom: 20px;
+        }
+        &__subtitle {
+            @extend %body_l;
+            color: $grey1;
+        }
+        &__mockup {
+            width: 50%;
+
+            display: flex;
+            align-items: end;
+            justify-content: right;
+        }
+    }
+}
+
+.contact {
+    width: 100%;
+
+    &__container {
+        margin: 60px 55px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact-form {
+        width: 100%;
+        max-width: 1170px;
+
+        display: flex;
+
+        border-radius: 20px;
+        background-color: white;
+        border: 1px solid #e5f4f2;
+
+        &__container {
+            width: 100%;
+            margin: 60px;
+
+            display: flex;
+            flex-direction: column;
+        }
+        &__content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        &__title {
+            @extend %display_m;
+            color: $grey1;
+            margin-bottom: 10px;
+        }
+        &__subtitle {
+            @extend %body_m;
+        }
+        &__text {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+        &__contact-us {
+            width: 465px;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+        }
+        &__contact-us-details-list {
+            margin-top: 0;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        &__contact-us-details-list-item {
+            @extend %body_m;
+            list-style: none;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                margin-right: 12px;
+                width: 24px;
+                height: 24px;
+                vertical-align: -20%;
+            }
+            &--phone {
+                &::before {
+                    background-image: url(assets/icons/PhoneCall.svg);
+                }
+            }
+            &--email {
+                &::before {
+                    background-image: url(assets/icons/Mail2.svg);
+                }
+            }
+        }
+        &__socials-text {
+            @extend %display_xs;
+            margin-bottom: 20px;
+        }
+        &__form {
+            width: calc(100% - 465px);
+            margin-right: 80px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        &__textfields {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}
+
+.footer {
+    height: 100%;
+    background-color: $grey1;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 60px;
+    }
+    &__copyright-text {
+        margin: 0;
+        line-height: 20px;
+        font-size: 14px;
+        color: white;
+        font-weight: 300;
+    }
+}

@@ -1105,14 +1105,6 @@ body {
             align-items: center;
         }
     }
-    .plans {
-        &__list {
-            .plan-card {
-                &__features-item {
-                }
-            }
-        }
-    }
     .get-today {
         .get-today-card {
             flex-direction: column;
